@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   # Routing Users
   resources :cocktails, except: [:destroy, :edit, :update] do
-    resources :doses, only: [:new, :create, :destroy]
+    resources :doses, only: [:new, :create]
   end
+
+  resources :doses, only: [:destroy]
 end
