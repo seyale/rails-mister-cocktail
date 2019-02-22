@@ -1,14 +1,8 @@
-<div class="container">
-  <h1>Add new dose to to <%= @cocktail.name %></h1>
-
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.association :ingredient %>
-  <%= f.input :description %>
-  <%= f.submit class: 'btn btn-danger' %>
-
-  <% end %>
-
-  <%= link_to '< back', @cocktail %>
-
-</div>
+<h1>Add new dose to to <%= @cocktail.name %></h1>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+<%= f.association :ingredient, collection: Ingredient.all.order(:name) %>
+<%= f.input :description %>
+<%= f.submit class: 'btn btn-danger' %>
+<% end %>
+<%= link_to '< back', @cocktail %>
 <!-- <form action="/cocktails/737/doses", method="post"> -->
