@@ -1,19 +1,12 @@
 <h1>Hola Mister Cocktail</h1>
 <h4><%= link_to '+ Mix a new cocktail', new_cocktail_path, class: 'btn btn-danger' %></h4>
 
-<table>
-  <thead>
-    <tr>
-      <th><h5>Cocktails:</h5></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @cocktails.each do |cocktail| %>
-    <tr>
-      <td> <%= link_to cocktail.name, cocktail %> </td>
-      <td><%= cl_image_tag cocktail.photo, height: 200, crop: :fill %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
 
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+  <div class="card-category">
+    <%= cl_image_tag cocktail.photo, width: 200, crop: :fill %>
+      <%= link_to cocktail.name, cocktail %>
+  </div>
+  <% end %>
+</div>
