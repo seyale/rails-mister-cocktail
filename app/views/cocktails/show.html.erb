@@ -1,7 +1,8 @@
-<%= cl_image_tag @cocktail.photo, height: 200, crop: :fill %>
-<h1><%= @cocktail.name %></h1>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo %>')">
+  <h1><%= @cocktail.name %></h1>
+</div>
 
-<%= link_to 'add dose', new_cocktail_dose_path(@cocktail) %>
+<%= link_to 'add dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-flat' %>
 
 
 <table>

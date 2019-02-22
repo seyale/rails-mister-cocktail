@@ -1,3 +1,12 @@
+a {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    text-decoration:none;
+    color: #1EDD88;
+  }
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -42,7 +51,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
